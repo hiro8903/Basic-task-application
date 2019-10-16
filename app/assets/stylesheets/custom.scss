@@ -71,6 +71,50 @@ p {
   color: gray;
   text-decoration: none;
 }
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+
+.header-list {
+  color: #fff !important;
+  font-weight: bold;
+  &:hover {
+    color: gray !important;
+  }
+}
+
+
+element.style {
+}
+
+.dropdown-header {
+    display: block;
+    font-size: 12px;
+    line-height: 1.42857;
+    color: rgb(119, 119, 119);
+    white-space: nowrap;
+    padding: 3px 20px;
+    background-color: rgba(200,200,200,0.5);
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: teal;
+}
+
+/* トップページ */
+
+#top-main-title{
+  font-style: italic;
+  font-weight: bold;
+}
+
+#top-main {
+  background-color: rgba(255,255,255,0);
+}
+
 /* デバッグウインドウ */
 
 .debug_dump {
@@ -98,4 +142,9 @@ p {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+/* 入力フォーム */
+.form-control{
+  width: 100%;
 }
