@@ -1,0 +1,19 @@
+<% provide(:title, "New Task") %>
+  <div class="container">
+    <h1 class="form-heading">タスク新規作成</h1>
+    <%= form_tag tasks_create_path do %>
+      <div class="form">
+        <div class="form-body">
+          
+          <label class="label-form" for="task_name">名称</label>
+          <input class="form-control" type="text" name="task_name">
+          
+          <label class="label-form" for="task_description">詳細</label>
+          <textarea rows="5" class="form-control" name="content"></textarea>
+          
+          <input type="submit" name="commit" value="新規登録" class="btn btn-lg btn-primary btn-form" data-disable-with="新規登録">
+        
+        </div>
+      </div>
+    <% end %>
+  </div>
