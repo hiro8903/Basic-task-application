@@ -31,8 +31,12 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.content = params[:content]
     @task.task_name = params[:task_name]
-    @task.save
-    redirect_to user_tasks_index_url
+    if @task.save
+      redirect_to user_tasks_index_url
+    else
+      render :edit
+    end
+    
   end
 
   def destroy
