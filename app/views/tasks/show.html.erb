@@ -32,7 +32,7 @@
       
       <div>
         <%= link_to "編集", user_edit_task_path, class: "btn btn-lg btn-success" %>
-        <%= link_to "削除","#", method: :delete,
+        <%= link_to "削除", user_destroy_task_path, method: :post,
                 data: { confirm: "#{@task.task_name}を削除します。よろしいですか？"},
                 class: "btn btn-lg btn-danger" %>
       </div>
