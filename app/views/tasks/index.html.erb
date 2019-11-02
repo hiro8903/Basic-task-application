@@ -8,7 +8,7 @@
 
 <div class="row">
   <div class="col-md-10 1-1">
-    <%= link_to "タスク新規作成", tasks_new_path, class: "btn btn-lg btn-primary pull-right" %>
+    <%= link_to "タスク新規作成", user_tasks_new_path, class: "btn btn-lg btn-primary pull-right" %>
     <table class="table table-hover" id="table-tasks">
       <thead>
         <tr>
@@ -21,10 +21,10 @@
       <tbody>
           <% @tasks.each do |task| %>
           <tr>
-            <td><%= link_to task.task_name, task_path(task.id), class: "task-name" %></td>
+            <td><%= link_to task.task_name, user_task_path(id: task.id,), class: "task-name" %></td>
             <td><%= task.created_at %></td>
             <td>
-              <%= link_to "編集", "#", class: "btn btn-success" %>
+              <%= link_to "編集", user_edit_task_path(id: task.id), class: "btn btn-success" %>
               <%= link_to "削除", "#", class: "btn btn-danger" %>
             </td>
           </tr>
