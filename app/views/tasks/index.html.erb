@@ -1,8 +1,3 @@
-<!--サンプルページのHTMLコピー-->
-<!--これからerbを利用して編集する-->
-<!--新規作成ボタン編集済み　リンク先指定済み-->
-<!--タスクの削除ボタン作成　リンクは未実装-->
-<!--タスク名をリンクにした。　リンク先は未実装　作成日の表示はこれから修正-->
 <% provide(:title, current_user.name) %>
 <h1><%= current_user.name %>のタスク一覧</h1>
 
@@ -25,7 +20,9 @@
             <td><%= task.created_at %></td>
             <td>
               <%= link_to "編集", user_edit_task_path(id: task.id), class: "btn btn-success" %>
-              <%= link_to "削除", "#", class: "btn btn-danger" %>
+              <%= link_to "削除", user_destroy_task_path(id: task.id), method: :post,
+                data: { confirm: "#{task.task_name}を削除します。よろしいですか？"},
+                class: "btn  btn-danger" %>
             </td>
           </tr>
           <% end %>

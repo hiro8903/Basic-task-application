@@ -16,8 +16,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.where(user_id: current_user.id)
-    
+    @tasks = Task.where(user_id: current_user.id).all.order(id: "DESC")
   end
 
   def show
@@ -50,4 +49,5 @@ class TasksController < ApplicationController
     flash[:success] = "タスクを削除しました。"
     redirect_to user_tasks_index_url
   end
+
 end

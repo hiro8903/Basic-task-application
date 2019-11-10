@@ -1,0 +1,18 @@
+ <%= form_with url: yield(:url), local: true do |f| %>
+  <%= render 'shared/task_error_messages', object: @task %>
+  
+  <%= f.label :task_name, class: "label-form" %>
+  <%= f.text_field :task_name, value: @task.task_name, class: "form-control"  %>
+
+  <%= f.label :content, class: "label-form" %>
+  <%= f.text_area :content, value: @task.content, class: "form-control" %>
+
+
+  <% if local_assigns[:full] %>
+    <%= f.submit yield(:button_text), class: "btn btn-lg btn-primary btn-form" %>
+    <%= link_to "キャンセル", user_tasks_index_path(current_user), class: 'btn btn-lg btn-default' %>
+  <% else %>
+    <%= f.submit yield(:button_text), class: "btn btn-lg btn-primary btn-form" %>
+  <% end %>
+  
+<% end %>

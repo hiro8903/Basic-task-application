@@ -1,27 +1,10 @@
 <% provide(:title, "Edit Task") %>
-  <div class="container">
-    <h1 class="form-heading">タスク編集</h1>
-    <%= form_tag user_update_task_path do %>
-      <div class="form">
-        <div id="error_explanation">
-          <div class="form-error">
-            <% @task.errors.full_messages.each do |message| %>
-              <div class="form-error"><%= message %></div>
-            <% end %>
-          </div>
-        </div>
-        <div class="form-body">
-          <label class="label-form" for="task_name">名称</label>
-          <input class="form-control" type="text" name="task_name" value="<%= @task.task_name%>">
-          
-          <label class="label-form" for="task_description">詳細</label>
-          <textarea rows="5" class="form-control" name="content"><%= @task.content %></textarea>
-          
-          <input type="submit" name="commit" value="更新" class="btn btn-primary btn-form" data-disable-with="更新">
-          <%= link_to "キャンセル", user_tasks_index_path(current_user), class: 'btn btn-default' %>
-        
-        </div>
-      </div>
-    <% end %>
+<% provide(:url, user_update_task_path) %>
+<% provide(:button_text, "更新") %>
 
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render 'form', full: true %>
+  </div>
+</div>
 </div>
